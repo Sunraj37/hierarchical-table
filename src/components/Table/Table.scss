@@ -1,0 +1,118 @@
+.table td, .table th {
+  vertical-align: middle;
+}
+// Table.scss
+
+// Base Styling
+h2 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+strong {
+  font-weight: 600;
+}
+
+// Table Styling
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+
+  th,
+  td {
+    text-align: left;
+    vertical-align: middle;
+    padding: 0.75rem;
+  }
+
+  thead {
+    background-color: #343a40;
+    color: #fff;
+    font-size: 1rem;
+
+    th {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: background 0.2s ease-in;
+
+      &:hover {
+        background-color: #f9f9f9;
+      }
+
+      &:nth-child(even):not(.table-info) {
+        background-color: #fcfcfc;
+      }
+    }
+
+    td input[type='number'] {
+      max-width: 80px;
+      padding: 0.3rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 0.9rem;
+    }
+
+    td button {
+      width: 35px;
+      height: 35px;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      margin: 0 4px;
+      transition: 0.2s;
+    }
+
+    td button:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-outline-primary {
+      background-color: #e7f1ff;
+      border: 1px solid #0d6efd;
+      color: #0d6efd;
+    }
+
+    .btn-outline-success {
+      background-color: #e7fce9;
+      border: 1px solid #198754;
+      color: #198754;
+    }
+  }
+
+  .table-info {
+    background-color: #f1f3f5;
+
+    td {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  }
+}
+
+// Optional enhancements
+input[type='number']:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+}
+
+// Highlight updated rows (optional utility)
+.updated-row {
+  background-color: #e6f7ff !important;
+  transition: background 0.3s ease-in-out;
+}
+
+// Sticky Grand Total (optional)
+.table-info {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
